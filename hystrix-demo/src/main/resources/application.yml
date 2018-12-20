@@ -6,10 +6,9 @@ spring:
   application:
     name: eureka-hystrix
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://admin:123456@localhost:8761/eureka/
+spring:
+  profiles:
+    active: dev
 
 feign:
   hystrix:

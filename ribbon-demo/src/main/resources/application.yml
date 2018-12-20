@@ -6,8 +6,7 @@ spring:
   application:
     name: eureka-ribbon
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://admin:123456@localhost:8761/eureka/
+spring:
+  profiles:
+    active: dev
 

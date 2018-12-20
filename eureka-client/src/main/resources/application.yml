@@ -2,10 +2,25 @@ server:
   port: 8080
 
 spring:
-    application:
-        name: eureka-client-one
+  application:
+      name: eureka-client-one
+  # 选择加载不同环境的配置文件
+  profiles:
+    active: dev
+    include: mvc, data, config
+  # 配置热部署
+  devtools:
+    restart:
+      # 如果改为true则当修改java目录下的文件时会自动进行重启
+      enabled: true
+      additional-paths: src/main/java
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://admin:123456@localhost:8761/eureka/
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.hht.eurekaclient.bean
+
+pagehelper:
+  helperDialect: mysql
+
+package:
+  type: jar
