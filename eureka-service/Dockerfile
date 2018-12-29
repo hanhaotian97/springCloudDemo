@@ -2,7 +2,7 @@ FROM java
 
 ENV TZ="Asia/Shanghai"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
-ENV WORK_PATH /data/docker-project/
+ENV WORK_PATH /data
 
 # --------APP---------
 # 项目jar名称
@@ -35,7 +35,7 @@ EXPOSE 8761
 
 WORKDIR $WORK_PATH
 COPY ./build/libs/*.jar $WORK_PATH
-ADD run.sh $WORK_PATH
+ADD ./run.sh $WORK_PATH
 
 
 CMD ["/bin/bash", "run.sh"]

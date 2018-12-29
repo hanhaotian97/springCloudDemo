@@ -2,7 +2,7 @@ FROM java
 
 ENV TZ="Asia/Shanghai"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
-ENV WORK_PATH /data/docker-project/
+ENV WORK_PATH /data
 
 # --------APP---------
 # 项目jar名称
