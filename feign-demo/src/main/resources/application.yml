@@ -4,8 +4,6 @@ server:
 spring:
   profiles:
     active: dev
-
-spring:
   application:
     name: eureka-feign
 
